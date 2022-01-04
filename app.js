@@ -55,7 +55,9 @@ async function start() {
   console.log('替换变量完毕')
   // 执行
   await exec("node JD_DailyBonus.js >> result.txt");
-  console.log('执行完毕')
+
+  const data = fs.readFileSync('result.txt', 'utf8')
+  console.log(data, '执行完毕')
 
   if (serverJ) {
     const path = "./result.txt";
