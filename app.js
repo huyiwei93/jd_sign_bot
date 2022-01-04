@@ -22,6 +22,8 @@ async function downFile () {
 async function changeFile () {
    let content = await fs.readFileSync('./JD_DailyBonus.js', 'utf8')
    content = content.replace(/var Key = ''/, `var Key = '${KEY}'`);
+
+  console.log(KEY, 'key')
    if (DualKey) {
     content = content.replace(/var DualKey = ''/, `var DualKey = '${DualKey}'`);
    }
